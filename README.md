@@ -1,4 +1,4 @@
-## XXXXX Project by :  
+## Smart parking Project by Noa, Shay and yoav :  
   
 ## Details about the project
  
