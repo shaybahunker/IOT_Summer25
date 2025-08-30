@@ -1,4 +1,4 @@
-## Smart parking Project by Noa, Shay and yoav :  
+## Smart parking Project by Noa, Shay and yoav - Group 9 :  
   
 ## Details about the project
  
