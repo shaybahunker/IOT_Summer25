@@ -10,6 +10,9 @@
 #include <deque>
 #include <functional>
 
+// forward declare so Arduino auto-prototypes know the type
+enum SpotState : uint8_t;
+
 //wifi configurations
 const char* ssid = "NoasIphone";
 const char* password = "06032002";
@@ -55,9 +58,13 @@ XY spotXY[TOTAL_SPOTS] = {{0,1,1},{1, 1,1},{2,1,1},{3,1,1},{4,1,1},{5,1,1}, {1,2
   {1, 4, 2},{2,4,2},{ 3, 4, 2},{4,4,2},{5,4,2},
   {1 ,5, 2},{2,5,2},{3,5,2},{4,5,2}};
 
-enum SpotState { FREE=0,
-TAKEN=1, 
-RESERVED=2 }; //enum to send spot state to firebase
+// enum must have a fixed underlying type for forward-decl to work
+enum SpotState : uint8_t { 
+  FREE=0,
+  TAKEN=1, 
+  RESERVED=2 
+}; //enum to send spot state to firebase
+
 SpotState spotState[TOTAL_SPOTS];//array of all spots, each described as a state because it can only be one of 3, free taken or reserved
 float spotLayoutDistCm[TOTAL_SPOTS];
 String plate_of_the_spot[TOTAL_SPOTS];
